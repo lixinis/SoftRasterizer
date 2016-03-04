@@ -1,0 +1,1 @@
+A simple soft rasterizer written in c++
