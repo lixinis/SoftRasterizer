@@ -1,9 +1,11 @@
 #include <iostream>
+#include <vector>
 #include <SDL.h>
 
 #include "Window.h"
 #include "Canvas.h"
 #include "Matrix.h"
+#include "Mesh.h"
 
 Window::Window()
 {
@@ -16,13 +18,16 @@ Window::~Window()
 
 int Window::Init()
 {
+	int width = 640;
+	int height = 480;
+
 	if (SDL_Init(SDL_INIT_VIDEO) != 0)
 	{
 		std::cout << "SDL_Init error:" << SDL_GetError() << std::endl;
 		return 1;
 	}
 
-	SDL_Window *win = SDL_CreateWindow("Rasterizer", 100, 100, 640, 480, SDL_WINDOW_SHOWN);
+	SDL_Window *win = SDL_CreateWindow("Rasterizer", 100, 100, width, height, SDL_WINDOW_SHOWN);
 	if (win == nullptr)
 	{
 		std::cout << "SDL_CreateWindow Error:" << SDL_GetError() << std::endl;
@@ -38,57 +43,36 @@ int Window::Init()
 		return 1;
 	}
 
-	mCanvas = new Canvas(ren);
+	SDL_Texture *texture = SDL_CreateTexture(ren, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, width, height);
+	if (texture == NULL) {
+		SDL_Quit();
+		fprintf(stderr, "CreateTexture failed\n");
+	}
+
+	SDL_Rect *rect = new SDL_Rect();
+	rect->x = 0;
+	rect->y = 0;
+	rect->w = width;
+	rect->h = height;
+
+	void *pixels;
+
+	mCanvas = new Canvas(width, height);
 
 	bQuit = false;
 
 	while (!bQuit){
-		Input();
-		Update();
+		bQuit = mCanvas->HandleInput();
+
+		mCanvas->Render();
+
+		SDL_UpdateTexture(texture, NULL, mCanvas->frameBuffer, 640 * sizeof(Uint32));
+
+		SDL_RenderClear(ren);
+		SDL_RenderCopy(ren, texture, NULL, NULL);
+		SDL_RenderPresent(ren);
 	}
 
 	SDL_Quit();
 	return 0;
-}
-
-void Window::Input()
-{
-	SDL_Event e;
-	while (SDL_PollEvent(&e)){
-		if (e.type == SDL_QUIT){
-			bQuit = true;
-		}
-		else if (e.type == SDL_KEYDOWN)
-		{
-			switch (e.key.keysym.sym)
-			{
-			case SDLK_ESCAPE:
-				bQuit = true;
-				break;
-			default:
-				break;
-			}
-		}
-	}
-}
-
-void Window::Update()
-{
-	mCanvas->Clear(Color(100, 0, 0, 255));
-	Vertex v;
-	v.position = Vector3(100, 100, 0);
-	v.color = Color(255, 255, 255, 255);
-	mCanvas->DrawPoint(v);
-
-	float m[4][4] =
-	{
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 },
-		{ 0, 0, 0, 0 }
-	};
-
-	Matrix matrix(m);
-
-	mCanvas->Present();
 }
