@@ -21,6 +21,12 @@ public:
 
 	~Vertex(){};
 
+	Vertex Interpolate(const Vertex &vertex, float factor) const {
+		Vector3 p = position.Interpolate(vertex.position, factor);
+		Color c = color.Interpolate(vertex.color, factor);
+		return Vertex(p, c);
+	};
+
 	Vector3 position;
 	Color color;
 private:

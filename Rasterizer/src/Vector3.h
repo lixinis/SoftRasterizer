@@ -12,6 +12,8 @@ public:
 
 	}
 
+	~Vector3();
+
 	float Length()
 	{
 		return sqrtf(x * x + y * y + z * z);
@@ -41,6 +43,11 @@ public:
 	Vector3 operator-(const Vector3& vec) const
 	{
 		return Vector3(x - vec.x, y - vec.y, z - vec.z);
+	}	
+	
+	Vector3 operator*(float s) const
+	{
+		return Vector3(x * s, y * s, z * s);
 	}
 
 	Vector3 Cross(const Vector3& vec) const
@@ -64,7 +71,10 @@ public:
 		return *this;
 	}
 
-	~Vector3();
+	Vector3 Interpolate(const Vector3 &vector, float factor) const
+	{
+		return *this + (vector - *this) * factor;
+	}
 public:
 	float x;
 	float y;

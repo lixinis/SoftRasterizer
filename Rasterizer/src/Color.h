@@ -8,12 +8,12 @@ public:
 
 	~Color() {};
 
-	Color operator+(const Color& color)
+	Color operator+(const Color& color) const
 	{
 		return Color(r + color.r, g + color.g, b + color.b, a + color.a);
 	}
 
-	Color operator-(const Color& color)
+	Color operator-(const Color& color) const
 	{
 		return Color(r - color.r, g - color.g, b - color.b, a - color.a);
 	}
@@ -21,6 +21,11 @@ public:
 	Color operator*(float s)
 	{
 		return Color(r * s, g * s, b * s, a * s);
+	}
+
+	Color Interpolate(const Color &c, float factor) const
+	{
+		return *this + (c - *this) * factor;
 	}
 
 	uint32_t ToU32T()
@@ -32,11 +37,10 @@ public:
 
 #ifdef __APPLE__
 		uint32_t value = (B << 24) | (G << 16) | (R << 8) | A;
-		// visual studio
 #elif _WIN32
-		uint32_t value = (A << 24) | (R << 16) | (G << 8) | B;
+		uint32_t value = (B << 24) | (G << 16) | (R << 8) | A;
 #else
-		uint32_t value = (A << 24) | (R << 16) | (G << 8) | B;
+		uint32_t value = (B << 24) | (G << 16) | (R << 8) | A;
 #endif
 		return value;
 	}
