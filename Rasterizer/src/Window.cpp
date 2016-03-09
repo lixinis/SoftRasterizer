@@ -14,6 +14,7 @@ Window::Window()
 
 Window::~Window()
 {
+	delete mCanvas;
 }
 
 int Window::Init()
