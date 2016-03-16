@@ -1,12 +1,14 @@
 #pragma once
 
+#include <stdint.h>
+
 class Color
 {
 public:
-	Color() {};
-	Color(float nr, float ng, float nb, float na) : r(nr), g(ng), b(nb), a(na) {};
+	Color() {}
+	Color(float nr, float ng, float nb, float na) : r(nr), g(ng), b(nb), a(na) {}
 
-	~Color() {};
+	~Color() {}
 
 	Color operator+(const Color& color) const
 	{
@@ -43,7 +45,7 @@ public:
 		uint32_t value = (B << 24) | (G << 16) | (R << 8) | A;
 #endif
 		return value;
-	}
+	};
 public:
 	float r;
 	float g;

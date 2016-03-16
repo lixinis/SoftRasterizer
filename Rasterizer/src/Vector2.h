@@ -9,7 +9,7 @@ public:
 
 	}
 
-	Vector2 operator=(const Vector2& vec)
+	void operator=(const Vector2& vec)
 	{
 		x = vec.x;
 		y = vec.y;

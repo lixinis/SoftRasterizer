@@ -4,9 +4,22 @@
 #include "Canvas.h"
 #include "Mesh.h"
 #include "Matrix.h"
+#include "ObjReader.h"
 
 Canvas::Canvas()
 {
+	ObjReader *reader = new ObjReader();
+	mesh = reader->ReadObj("res/box.obj");
+}
+
+Canvas::Canvas(int w, int h)
+{
+	ObjReader *reader = new ObjReader();
+	mesh = reader->ReadObj("res/box.obj");
+	frameBuffer = new uint32_t[w * h];
+	zbuffer = new float[w * h];
+	width = w;
+	height = h;
 }
 
 void Canvas::PutPixel(Vector3 v, Color color)
@@ -180,6 +193,7 @@ bool Canvas::HandleInput()
 			default:
 				break;
 			}
+			return false;
 		}
 	}
 }
@@ -188,6 +202,7 @@ void Canvas::Render()
 {
 	Clear(Color(0, 0, 0, 255));
 
+	/*
 	Mesh* mesh = new Mesh();
 
 	std::vector<Vertex> vertices(8);
@@ -237,10 +252,11 @@ void Canvas::Render()
 	indices[33] = 4; indices[34] = 3; indices[35] = 7;
 
 	mesh->indices = indices;
+	*/
 
 	Matrix translateMatrix = Matrix::Translate(Vector3(0, 0, 0));
 	Matrix rotateMatrix = Matrix::Rotate(rotation);
-	Matrix scaleMatrix = Matrix::Scale(Vector3(1, 1, 1));
+	Matrix scaleMatrix = Matrix::Scale(Vector3(0.05, 0.05, 0.05));
 	Matrix world = scaleMatrix * rotateMatrix * translateMatrix;
 
 	Vector3 eye = Vector3(0, 0, -10);
@@ -254,9 +270,9 @@ void Canvas::Render()
 
 	for (int i = 0; i < mesh->indices.size(); i+=3)
 	{
-		Vertex v1 = mesh->vertices[mesh->indices[i]];
-		Vertex v2 = mesh->vertices[mesh->indices[i + 1]];
-		Vertex v3 = mesh->vertices[mesh->indices[i + 2]];
+		Vertex v1 = mesh->vertices[mesh->indices[i] - 1];
+		Vertex v2 = mesh->vertices[mesh->indices[i + 1] - 1];
+		Vertex v3 = mesh->vertices[mesh->indices[i + 2] - 1];
 
 		Project(v1, transform);
 		Project(v2, transform);
@@ -264,8 +280,6 @@ void Canvas::Render()
 
 		DrawTriangle(v1, v2, v3);
 	}
-
-	delete mesh;
 }
 
 void Canvas::Project(Vertex& v, Matrix& transform)

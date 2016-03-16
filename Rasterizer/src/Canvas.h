@@ -1,5 +1,8 @@
+#pragma once
+
 #include <SDL.h>
-#include "Color.h"
+
+#include "Mesh.h"
 #include "Matrix.h"
 #include "Vertex.h"
 
@@ -8,16 +11,11 @@ class Canvas
 {
 public:
 	Canvas();
-	Canvas(int w, int h)
-	{
-		frameBuffer = new uint32_t[w * h];
-		zbuffer = new float[w * h];
-		width = w;
-		height = h;
-	};
+	Canvas(int w, int h);
 
 	virtual ~Canvas()
 	{
+		delete mesh;
 		delete[] frameBuffer;
 		delete[] zbuffer;
 	};
@@ -46,5 +44,7 @@ private:
 
 	// for test input
 	Vector3 rotation;
+
+	Mesh *mesh;
 };
 

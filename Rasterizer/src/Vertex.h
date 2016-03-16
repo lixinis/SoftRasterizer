@@ -19,15 +19,17 @@ public:
 		color = c;
 	}
 
-	~Vertex(){};
+	~Vertex(){}
 
 	Vertex Interpolate(const Vertex &vertex, float factor) const {
 		Vector3 p = position.Interpolate(vertex.position, factor);
 		Color c = color.Interpolate(vertex.color, factor);
 		return Vertex(p, c);
-	};
+	}
 
 	Vector3 position;
+	Vector3 normal;
+	Vector2 uv;
 	Color color;
 private:
 };
