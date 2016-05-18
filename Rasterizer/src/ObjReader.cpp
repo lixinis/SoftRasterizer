@@ -14,7 +14,7 @@ ObjReader::~ObjReader()
 {
 }
 
-Mesh* ObjReader::ReadObj(char* path)
+Mesh* ObjReader::ReadObj(string path)
 {
 	Mesh* mesh = new Mesh();
 
@@ -23,7 +23,7 @@ Mesh* ObjReader::ReadObj(char* path)
 	std::vector<int> uvIndices;
 	std::vector<int> normalIndices;
 
-	ifstream file(path, ios::in);
+	ifstream file(path.c_str(), ios::in);
 	if (!file)
 	{
 		std::cout << "Read File Failed!";

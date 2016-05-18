@@ -1,0 +1,376 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C7A200581CEC6A6C00923AA0 /* Canvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C7A200441CEC686B00923AA0 /* Canvas.cpp */; };
+		C7A200591CEC6A6C00923AA0 /* Canvas.h in Sources */ = {isa = PBXBuildFile; fileRef = C7A200451CEC686B00923AA0 /* Canvas.h */; };
+		C7A2005A1CEC6A6C00923AA0 /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C7A200461CEC686B00923AA0 /* Color.cpp */; };
+		C7A2005B1CEC6A6C00923AA0 /* Color.h in Sources */ = {isa = PBXBuildFile; fileRef = C7A200471CEC686B00923AA0 /* Color.h */; };
+		C7A2005C1CEC6A6C00923AA0 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C7A200481CEC686B00923AA0 /* Main.cpp */; };
+		C7A2005D1CEC6A6C00923AA0 /* Matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C7A200491CEC686B00923AA0 /* Matrix.cpp */; };
+		C7A2005E1CEC6A6C00923AA0 /* Matrix.h in Sources */ = {isa = PBXBuildFile; fileRef = C7A2004A1CEC686B00923AA0 /* Matrix.h */; };
+		C7A2005F1CEC6A6C00923AA0 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C7A2004B1CEC686B00923AA0 /* Mesh.cpp */; };
+		C7A200601CEC6A6C00923AA0 /* Mesh.h in Sources */ = {isa = PBXBuildFile; fileRef = C7A2004C1CEC686B00923AA0 /* Mesh.h */; };
+		C7A200611CEC6A6C00923AA0 /* ObjReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C7A2004D1CEC686B00923AA0 /* ObjReader.cpp */; };
+		C7A200621CEC6A6C00923AA0 /* ObjReader.h in Sources */ = {isa = PBXBuildFile; fileRef = C7A2004E1CEC686B00923AA0 /* ObjReader.h */; };
+		C7A200631CEC6A6C00923AA0 /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C7A2004F1CEC686B00923AA0 /* Transform.cpp */; };
+		C7A200641CEC6A6C00923AA0 /* Transform.h in Sources */ = {isa = PBXBuildFile; fileRef = C7A200501CEC686B00923AA0 /* Transform.h */; };
+		C7A200651CEC6A6C00923AA0 /* Vector2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C7A200511CEC686B00923AA0 /* Vector2.cpp */; };
+		C7A200661CEC6A6C00923AA0 /* Vector2.h in Sources */ = {isa = PBXBuildFile; fileRef = C7A200521CEC686B00923AA0 /* Vector2.h */; };
+		C7A200671CEC6A6C00923AA0 /* Vector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C7A200531CEC686B00923AA0 /* Vector3.cpp */; };
+		C7A200681CEC6A6C00923AA0 /* Vector3.h in Sources */ = {isa = PBXBuildFile; fileRef = C7A200541CEC686B00923AA0 /* Vector3.h */; };
+		C7A200691CEC6A6C00923AA0 /* Vertex.h in Sources */ = {isa = PBXBuildFile; fileRef = C7A200551CEC686B00923AA0 /* Vertex.h */; };
+		C7A2006A1CEC6A6C00923AA0 /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C7A200561CEC686B00923AA0 /* Window.cpp */; };
+		C7A2006B1CEC6A6C00923AA0 /* Window.h in Sources */ = {isa = PBXBuildFile; fileRef = C7A200571CEC686B00923AA0 /* Window.h */; };
+		C7A200831CEC717300923AA0 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A200821CEC717300923AA0 /* SDL2.framework */; };
+		C7A200941CEC73AA00923AA0 /* box.obj in CopyFiles */ = {isa = PBXBuildFile; fileRef = C7A200931CEC739C00923AA0 /* box.obj */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C7A200371CEC683800923AA0 /* Copy Files (1 item) */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			name = "Copy Files (1 item)";
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		C7A2008E1CEC733C00923AA0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = res;
+			dstSubfolderSpec = 16;
+			files = (
+				C7A200941CEC73AA00923AA0 /* box.obj in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C7A200391CEC683800923AA0 /* Rasterizer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Rasterizer; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7A200441CEC686B00923AA0 /* Canvas.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Canvas.cpp; sourceTree = "<group>"; };
+		C7A200451CEC686B00923AA0 /* Canvas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Canvas.h; sourceTree = "<group>"; };
+		C7A200461CEC686B00923AA0 /* Color.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Color.cpp; sourceTree = "<group>"; };
+		C7A200471CEC686B00923AA0 /* Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
+		C7A200481CEC686B00923AA0 /* Main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Main.cpp; sourceTree = "<group>"; };
+		C7A200491CEC686B00923AA0 /* Matrix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix.cpp; sourceTree = "<group>"; };
+		C7A2004A1CEC686B00923AA0 /* Matrix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Matrix.h; sourceTree = "<group>"; };
+		C7A2004B1CEC686B00923AA0 /* Mesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
+		C7A2004C1CEC686B00923AA0 /* Mesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
+		C7A2004D1CEC686B00923AA0 /* ObjReader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ObjReader.cpp; sourceTree = "<group>"; };
+		C7A2004E1CEC686B00923AA0 /* ObjReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjReader.h; sourceTree = "<group>"; };
+		C7A2004F1CEC686B00923AA0 /* Transform.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Transform.cpp; sourceTree = "<group>"; };
+		C7A200501CEC686B00923AA0 /* Transform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Transform.h; sourceTree = "<group>"; };
+		C7A200511CEC686B00923AA0 /* Vector2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vector2.cpp; sourceTree = "<group>"; };
+		C7A200521CEC686B00923AA0 /* Vector2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector2.h; sourceTree = "<group>"; };
+		C7A200531CEC686B00923AA0 /* Vector3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vector3.cpp; sourceTree = "<group>"; };
+		C7A200541CEC686B00923AA0 /* Vector3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector3.h; sourceTree = "<group>"; };
+		C7A200551CEC686B00923AA0 /* Vertex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vertex.h; sourceTree = "<group>"; };
+		C7A200561CEC686B00923AA0 /* Window.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = "<group>"; };
+		C7A200571CEC686B00923AA0 /* Window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
+		C7A200821CEC717300923AA0 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2.framework; sourceTree = "<group>"; };
+		C7A200911CEC739C00923AA0 /* box.FBX */ = {isa = PBXFileReference; lastKnownFileType = file; path = box.FBX; sourceTree = "<group>"; };
+		C7A200921CEC739C00923AA0 /* box.mtl */ = {isa = PBXFileReference; lastKnownFileType = text; path = box.mtl; sourceTree = "<group>"; };
+		C7A200931CEC739C00923AA0 /* box.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = box.obj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C7A200361CEC683800923AA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7A200831CEC717300923AA0 /* SDL2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C7A200301CEC683800923AA0 = {
+			isa = PBXGroup;
+			children = (
+				C7A200821CEC717300923AA0 /* SDL2.framework */,
+				C7A2003B1CEC683800923AA0 /* Rasterizer */,
+				C7A2003A1CEC683800923AA0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C7A2003A1CEC683800923AA0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C7A200391CEC683800923AA0 /* Rasterizer */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C7A2003B1CEC683800923AA0 /* Rasterizer */ = {
+			isa = PBXGroup;
+			children = (
+				C7A200901CEC739C00923AA0 /* res */,
+				C7A200431CEC686B00923AA0 /* src */,
+			);
+			path = Rasterizer;
+			sourceTree = "<group>";
+		};
+		C7A200431CEC686B00923AA0 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				C7A200441CEC686B00923AA0 /* Canvas.cpp */,
+				C7A200451CEC686B00923AA0 /* Canvas.h */,
+				C7A200461CEC686B00923AA0 /* Color.cpp */,
+				C7A200471CEC686B00923AA0 /* Color.h */,
+				C7A200481CEC686B00923AA0 /* Main.cpp */,
+				C7A200491CEC686B00923AA0 /* Matrix.cpp */,
+				C7A2004A1CEC686B00923AA0 /* Matrix.h */,
+				C7A2004B1CEC686B00923AA0 /* Mesh.cpp */,
+				C7A2004C1CEC686B00923AA0 /* Mesh.h */,
+				C7A2004D1CEC686B00923AA0 /* ObjReader.cpp */,
+				C7A2004E1CEC686B00923AA0 /* ObjReader.h */,
+				C7A2004F1CEC686B00923AA0 /* Transform.cpp */,
+				C7A200501CEC686B00923AA0 /* Transform.h */,
+				C7A200511CEC686B00923AA0 /* Vector2.cpp */,
+				C7A200521CEC686B00923AA0 /* Vector2.h */,
+				C7A200531CEC686B00923AA0 /* Vector3.cpp */,
+				C7A200541CEC686B00923AA0 /* Vector3.h */,
+				C7A200551CEC686B00923AA0 /* Vertex.h */,
+				C7A200561CEC686B00923AA0 /* Window.cpp */,
+				C7A200571CEC686B00923AA0 /* Window.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		C7A200901CEC739C00923AA0 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				C7A200911CEC739C00923AA0 /* box.FBX */,
+				C7A200921CEC739C00923AA0 /* box.mtl */,
+				C7A200931CEC739C00923AA0 /* box.obj */,
+			);
+			path = res;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C7A200381CEC683800923AA0 /* Rasterizer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7A200401CEC683800923AA0 /* Build configuration list for PBXNativeTarget "Rasterizer" */;
+			buildPhases = (
+				C7A200351CEC683800923AA0 /* Sources */,
+				C7A200361CEC683800923AA0 /* Frameworks */,
+				C7A200371CEC683800923AA0 /* Copy Files (1 item) */,
+				C7A2008E1CEC733C00923AA0 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Rasterizer;
+			productName = Rasterizer;
+			productReference = C7A200391CEC683800923AA0 /* Rasterizer */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C7A200311CEC683800923AA0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = lixinis;
+				TargetAttributes = {
+					C7A200381CEC683800923AA0 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = C7A200341CEC683800923AA0 /* Build configuration list for PBXProject "Rasterizer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C7A200301CEC683800923AA0;
+			productRefGroup = C7A2003A1CEC683800923AA0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C7A200381CEC683800923AA0 /* Rasterizer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C7A200351CEC683800923AA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7A200581CEC6A6C00923AA0 /* Canvas.cpp in Sources */,
+				C7A200591CEC6A6C00923AA0 /* Canvas.h in Sources */,
+				C7A2005A1CEC6A6C00923AA0 /* Color.cpp in Sources */,
+				C7A2005B1CEC6A6C00923AA0 /* Color.h in Sources */,
+				C7A2005C1CEC6A6C00923AA0 /* Main.cpp in Sources */,
+				C7A2005D1CEC6A6C00923AA0 /* Matrix.cpp in Sources */,
+				C7A2005E1CEC6A6C00923AA0 /* Matrix.h in Sources */,
+				C7A2005F1CEC6A6C00923AA0 /* Mesh.cpp in Sources */,
+				C7A200601CEC6A6C00923AA0 /* Mesh.h in Sources */,
+				C7A200611CEC6A6C00923AA0 /* ObjReader.cpp in Sources */,
+				C7A200621CEC6A6C00923AA0 /* ObjReader.h in Sources */,
+				C7A200631CEC6A6C00923AA0 /* Transform.cpp in Sources */,
+				C7A200641CEC6A6C00923AA0 /* Transform.h in Sources */,
+				C7A200651CEC6A6C00923AA0 /* Vector2.cpp in Sources */,
+				C7A200661CEC6A6C00923AA0 /* Vector2.h in Sources */,
+				C7A200671CEC6A6C00923AA0 /* Vector3.cpp in Sources */,
+				C7A200681CEC6A6C00923AA0 /* Vector3.h in Sources */,
+				C7A200691CEC6A6C00923AA0 /* Vertex.h in Sources */,
+				C7A2006A1CEC6A6C00923AA0 /* Window.cpp in Sources */,
+				C7A2006B1CEC6A6C00923AA0 /* Window.h in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C7A2003E1CEC683800923AA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C7A2003F1CEC683800923AA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C7A200411CEC683800923AA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/SDL2-2.0.4/include";
+				LIBRARY_SEARCH_PATHS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C7A200421CEC683800923AA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/SDL2-2.0.4/include";
+				LIBRARY_SEARCH_PATHS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C7A200341CEC683800923AA0 /* Build configuration list for PBXProject "Rasterizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7A2003E1CEC683800923AA0 /* Debug */,
+				C7A2003F1CEC683800923AA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7A200401CEC683800923AA0 /* Build configuration list for PBXNativeTarget "Rasterizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7A200411CEC683800923AA0 /* Debug */,
+				C7A200421CEC683800923AA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C7A200311CEC683800923AA0 /* Project object */;
+}

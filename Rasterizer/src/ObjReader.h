@@ -8,7 +8,7 @@ public:
 	ObjReader();
 	~ObjReader();
 
-	Mesh* ReadObj(char* filePath);
+	Mesh* ReadObj(string filePath);
 private:
 
 };

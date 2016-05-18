@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 
+#include "float.h"
+
 #include "Canvas.h"
 #include "Mesh.h"
 #include "Matrix.h"
@@ -9,13 +11,13 @@
 Canvas::Canvas()
 {
 	ObjReader *reader = new ObjReader();
-	mesh = reader->ReadObj("res/box.obj");
+	mesh = reader->ReadObj("box.obj");
 }
 
 Canvas::Canvas(int w, int h)
 {
 	ObjReader *reader = new ObjReader();
-	mesh = reader->ReadObj("res/box.obj");
+	mesh = reader->ReadObj("box.obj");
 	frameBuffer = new uint32_t[w * h];
 	zbuffer = new float[w * h];
 	width = w;
@@ -46,6 +48,7 @@ void Canvas::DrawPoint(Vertex& v)
 }
 
 /// use bresemham line drawing algrithom
+
 void Canvas::DrawLine(Vertex& v1, Vertex& v2)
 {
 	int x1 = (int)v1.position.x;
@@ -66,7 +69,8 @@ void Canvas::DrawLine(Vertex& v1, Vertex& v2)
 		for (int x = x1; x != x2; x += sign) {
 			int y = y1 + (x - x1) * ratio;
 			Color c = v1.color + ((v2.color - v1.color) * ((float)(x - x1) / (x2 - x1)));
-			DrawPoint(Vertex(Vector3(x, y, 0), c));
+            Vertex v = Vertex(Vector3(x, y, 0), c);
+			DrawPoint(v);
 		}
 	}
 	else {
@@ -79,11 +83,13 @@ void Canvas::DrawLine(Vertex& v1, Vertex& v2)
 		for (int y = y1; y != y2; y += sign) {
 			int x = x1 + (y - y1) * ratio;
 			Color c = v1.color + ((v2.color - v1.color) * ((float)(y - y1) / (y2 - y1)));
-			DrawPoint(Vertex(Vector3(x, y, 0), c));
+            Vertex v = Vertex(Vector3(x, y, 0), c);
+            DrawPoint(v);
 		}
 	}
 }
 
+ 
 void Canvas::DrawScanline(Vertex &v1, Vertex &v2)
 {
 	int x1 = v1.position.x;
@@ -196,6 +202,7 @@ bool Canvas::HandleInput()
 			return false;
 		}
 	}
+    return false;
 }
 
 void Canvas::Render()
