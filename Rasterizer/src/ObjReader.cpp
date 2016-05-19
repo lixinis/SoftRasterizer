@@ -6,19 +6,13 @@
 
 #include "ObjReader.h"
 
-ObjReader::ObjReader()
-{
-}
-
-ObjReader::~ObjReader()
-{
-}
-
 Mesh* ObjReader::ReadObj(string path)
 {
 	Mesh* mesh = new Mesh();
 
-	std::vector<Vertex> vertices;
+	std::vector<Vector3> temp_vertices;
+    std::vector<Vector3> temp_normals;
+    std::vector<Vector2> temp_uvs;
 	std::vector<int> vertexIndices;
 	std::vector<int> uvIndices;
 	std::vector<int> normalIndices;
@@ -35,13 +29,26 @@ Mesh* ObjReader::ReadObj(string path)
 	{
 		if (str.substr(0, 2) == "v ")
 		{
-			Vertex v;
+			Vector3 v;
 
 			std::istringstream s(str.substr(2));
-			s >> v.position.x >> v.position.y >> v.position.z;
-			v.color = Color(255, 255, 255, 255);
-			vertices.push_back(v);
+			s >> v.x >> v.y >> v.z;
+			temp_vertices.push_back(v);
 		}
+        else if(str.substr(0,2) == "vt")
+        {
+            Vector2 uv;
+            std::istringstream s(str.substr(2));
+            s >> uv.x >> uv.y;
+            temp_uvs.push_back(uv);
+        }
+        else if(str.substr(0,2) == "vn")
+        {
+            Vector3 normal;
+            std::istringstream s(str.substr(2));
+            s >> normal.x >> normal.y >> normal.z;
+            temp_normals.push_back(normal);
+        }
 		else if (str.substr(0,2) == "f ")
 		{
 			string vertex1, vertex2, vertex3;
@@ -63,10 +70,13 @@ Mesh* ObjReader::ReadObj(string path)
 		}
 	}
 
-	cout << "out!";
-
-	mesh->vertices = vertices;
-	mesh->indices = vertexIndices;
-
+    for (int i = 0; i < vertexIndices.size(); i++)
+    {
+        mesh->triangles.push_back(i);
+        mesh->vertices.push_back(temp_vertices[vertexIndices[i] - 1]);
+        mesh->normals.push_back(temp_normals[normalIndices[i] - 1]);
+        mesh->uvs.push_back(temp_uvs[uvIndices[i] - 1]);
+    }
+    
 	return mesh;
 }

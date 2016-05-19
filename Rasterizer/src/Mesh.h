@@ -13,6 +13,8 @@ public:
 
 
 public:
-	vector<Vertex> vertices;
-	vector<int> indices;
+	vector<Vector3> vertices;
+    vector<Vector3> normals;
+    vector<Vector2> uvs;
+	vector<int> triangles;
 };

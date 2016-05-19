@@ -1,9 +1,20 @@
-//
-//  Object.cpp
-//  Rasterizer
-//
-//  Created by happyelements on 16/5/18.
-//  Copyright © 2016年 lixinis. All rights reserved.
-//
+#include "Object.h"
+#include "ObjReader.h"
 
-#include <stdio.h>
+Object::Object()
+{
+    transform = new Transform();
+}
+
+Object::~Object()
+{
+    delete transform;
+    delete mesh;
+}
+
+bool Object::LoadMesh(std::string path)
+{
+    mesh = ObjReader::ReadObj("box.obj");
+    return (mesh != NULL);
+}
+

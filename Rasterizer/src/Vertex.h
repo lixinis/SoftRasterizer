@@ -7,10 +7,16 @@
 class Vertex
 {
 public:
-	Vertex() {};
+	Vertex()
+    {
+        position = Vector3::Zero();
+        color = Color(1,1,1,1);
+    }
+    
 	Vertex(float x, float y, float z)
 	{
 		position = Vector3(x, y, z);
+        color = Color(1, 1, 1, 1);
 	}
 
 	Vertex(Vector3 pos, Color c)
@@ -22,9 +28,12 @@ public:
 	~Vertex(){}
 
 	Vertex Interpolate(const Vertex &vertex, float factor) const {
-		Vector3 p = position.Interpolate(vertex.position, factor);
-		Color c = color.Interpolate(vertex.color, factor);
-		return Vertex(p, c);
+        Vertex v;
+		v.position = position.Interpolate(vertex.position, factor);
+		v.color = color.Interpolate(vertex.color, factor);
+        v.normal = normal.Interpolate(vertex.normal, factor);
+        
+        return v;
 	}
 
 	Vector3 position;

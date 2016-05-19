@@ -56,12 +56,16 @@ int Window::Init()
 	rect->w = width;
 	rect->h = height;
 
-	void *pixels;
+	//void *pixels;
 
 	mCanvas = new Canvas(width, height);
-
+    mCanvas->Init();
+    
 	bQuit = false;
 
+    const Uint32 fps = 1000 / 60;
+    Uint32 timer = SDL_GetTicks();
+    
 	while (!bQuit){
 		bQuit = mCanvas->HandleInput();
 
@@ -72,6 +76,14 @@ int Window::Init()
 		SDL_RenderClear(ren);
 		SDL_RenderCopy(ren, texture, NULL, NULL);
 		SDL_RenderPresent(ren);
+        
+        if(SDL_GetTicks() - timer < fps)
+        {
+            std::cout << "Cool!";
+            SDL_Delay(fps - SDL_GetTicks() + timer);
+        }
+        std::cout << SDL_GetTicks() - timer << std::endl;
+        timer = SDL_GetTicks();
 	}
 
 	SDL_Quit();

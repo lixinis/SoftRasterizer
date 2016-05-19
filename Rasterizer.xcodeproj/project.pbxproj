@@ -29,6 +29,7 @@
 		C7A2006B1CEC6A6C00923AA0 /* Window.h in Sources */ = {isa = PBXBuildFile; fileRef = C7A200571CEC686B00923AA0 /* Window.h */; };
 		C7A200831CEC717300923AA0 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A200821CEC717300923AA0 /* SDL2.framework */; };
 		C7A200941CEC73AA00923AA0 /* box.obj in CopyFiles */ = {isa = PBXBuildFile; fileRef = C7A200931CEC739C00923AA0 /* box.obj */; };
+		C7A200991CEC7D4100923AA0 /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C7A200981CEC7D4100923AA0 /* Object.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -80,6 +81,10 @@
 		C7A200911CEC739C00923AA0 /* box.FBX */ = {isa = PBXFileReference; lastKnownFileType = file; path = box.FBX; sourceTree = "<group>"; };
 		C7A200921CEC739C00923AA0 /* box.mtl */ = {isa = PBXFileReference; lastKnownFileType = text; path = box.mtl; sourceTree = "<group>"; };
 		C7A200931CEC739C00923AA0 /* box.obj */ = {isa = PBXFileReference; lastKnownFileType = text; path = box.obj; sourceTree = "<group>"; };
+		C7A200951CEC780400923AA0 /* Light.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Light.h; sourceTree = "<group>"; };
+		C7A200961CEC799F00923AA0 /* Object.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
+		C7A200971CEC7BEC00923AA0 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		C7A200981CEC7D4100923AA0 /* Object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Object.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +148,10 @@
 				C7A200551CEC686B00923AA0 /* Vertex.h */,
 				C7A200561CEC686B00923AA0 /* Window.cpp */,
 				C7A200571CEC686B00923AA0 /* Window.h */,
+				C7A200951CEC780400923AA0 /* Light.h */,
+				C7A200961CEC799F00923AA0 /* Object.h */,
+				C7A200981CEC7D4100923AA0 /* Object.cpp */,
+				C7A200971CEC7BEC00923AA0 /* Common.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -225,6 +234,7 @@
 				C7A200601CEC6A6C00923AA0 /* Mesh.h in Sources */,
 				C7A200611CEC6A6C00923AA0 /* ObjReader.cpp in Sources */,
 				C7A200621CEC6A6C00923AA0 /* ObjReader.h in Sources */,
+				C7A200991CEC7D4100923AA0 /* Object.cpp in Sources */,
 				C7A200631CEC6A6C00923AA0 /* Transform.cpp in Sources */,
 				C7A200641CEC6A6C00923AA0 /* Transform.h in Sources */,
 				C7A200651CEC6A6C00923AA0 /* Vector2.cpp in Sources */,

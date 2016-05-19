@@ -14,6 +14,16 @@ public:
 
 	~Vector3();
 
+    static Vector3 One()
+    {
+        return Vector3(1,1,1);
+    }
+    
+    static Vector3 Zero()
+    {
+        return Vector3(0,0,0);
+    }
+    
 	float Length()
 	{
 		return sqrtf(x * x + y * y + z * z);

@@ -1,13 +1,19 @@
-//
-//  Light.h
-//  Rasterizer
-//
-//  Created by happyelements on 16/5/18.
-//  Copyright © 2016年 lixinis. All rights reserved.
-//
+#pragma once
 
-#ifndef Light_h
-#define Light_h
+#include "Vector3.h"
+#include "Color.h"
 
-
-#endif /* Light_h */
+//Which is actually a directional light
+class Light
+{
+public:
+    Light() {};
+    ~Light() {};
+    
+    Vector3 direction;
+    //Vector3 position;
+    Color color;
+    float itensity;
+private:
+    
+};

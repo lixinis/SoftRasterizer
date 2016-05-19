@@ -1,13 +1,19 @@
-//
-//  Object.h
-//  Rasterizer
-//
-//  Created by happyelements on 16/5/18.
-//  Copyright © 2016年 lixinis. All rights reserved.
-//
+#pragma once
 
-#ifndef Object_h
-#define Object_h
+#include <iostream>
+#include "Mesh.h"
+#include "Transform.h"
 
-
-#endif /* Object_h */
+class Object
+{
+public:
+    Object();
+    ~Object();
+    
+    bool LoadMesh(std::string path);
+public:
+    Mesh *mesh;
+    Transform *transform;
+private:
+    
+};

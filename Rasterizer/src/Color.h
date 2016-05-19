@@ -32,10 +32,10 @@ public:
 
 	uint32_t ToU32T()
 	{
-		uint32_t R = (uint32_t)r;
-		uint32_t G = (uint32_t)g;
-		uint32_t B = (uint32_t)b;
-		uint32_t A = (uint32_t)a;
+		uint32_t R = (uint32_t)(r * 255);
+		uint32_t G = (uint32_t)(g * 255);
+		uint32_t B = (uint32_t)(b * 255);
+		uint32_t A = (uint32_t)(a * 255);
 
 #ifdef __APPLE__
 		uint32_t value = (B << 24) | (G << 16) | (R << 8) | A;
